@@ -168,3 +168,14 @@ model Session {
   @@unique([sessionId, id], map: "unique_id_per_session_id_4")
   @@index([sessionId])
 }
+
+model TypebotSession {
+  pkId         Int     @id @default(autoincrement())
+  sessionId    String  @db.VarChar(128)
+  
+  typebotSessionId    String  @db.VarChar(128)
+  id           String  @db.VarChar(128)
+
+  @@unique([sessionId, id], map: "unique_id_per_session_id_5")
+  @@index([sessionId])
+}
